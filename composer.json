@@ -1,0 +1,6 @@
+{
+    "require": {
+        "hoa/websocket": "^3.17",
+        "mike42/escpos-php": "^4.0"
+    }
+}
