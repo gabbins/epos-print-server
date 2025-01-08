@@ -169,7 +169,7 @@ class Escpos
     $date = $data->date_label;
     $date .= ' ' . $data->invoice_date;
 
-    $this->printer->text(rtrim($this->columnify($invoice_no, $date, 50, 50, 0, 0)));
+    $this->printer->text(rtrim($this->columnify($invoice_no, $date, 50, 50, 2, 0)));
     $this->printer->feed();
 
     //Customer info with tabled style
@@ -187,7 +187,7 @@ class Escpos
         $client_id .= ' ' . $data->client_id;
       }
 
-      $this->printer->text(rtrim($this->columnify($customer_info, $client_id, 50, 50, 0, 0)));
+      $this->printer->text(rtrim($this->columnify($customer_info, $client_id, 50, 50, 2, 0)));
       $this->printer->feed();
     }
 
@@ -235,7 +235,7 @@ class Escpos
 
         $line_total = $line['line_total'];
 
-        $string = rtrim($this->columnify($this->columnify($this->columnify($quantity, $product, 10, 40, 0, 0), $unit_price, 50, 25, 0, 0), $line_total, 75, 25, 0, 0));
+        $string = rtrim($this->columnify($this->columnify($this->columnify($quantity, $product, 10, 40, 2, 0), $unit_price, 50, 25, 0, 0), $line_total, 75, 25, 0, 0));
 
         $this->printer->text($string);
         $this->printer->feed(2);
