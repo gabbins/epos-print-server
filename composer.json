@@ -2,5 +2,8 @@
     "require": {
         "hoa/websocket": "^3.17",
         "mike42/escpos-php": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {"Twf\\Pps\\": "lib/"}
     }
 }

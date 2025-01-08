@@ -13,6 +13,10 @@ class ComposerStaticInit98b52049428e8d0c7536b67aad2ee231
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Twf\\Pps\\' => 8,
+        ),
         'M' => 
         array (
             'Mike42\\' => 7,
@@ -31,6 +35,10 @@ class ComposerStaticInit98b52049428e8d0c7536b67aad2ee231
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twf\\Pps\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/lib',
+        ),
         'Mike42\\' => 
         array (
             0 => __DIR__ . '/..' . '/mike42/escpos-php/src/Mike42',

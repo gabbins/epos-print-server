@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Twf\\Pps\\' => array($baseDir . '/lib'),
     'Mike42\\' => array($vendorDir . '/mike42/escpos-php/src/Mike42', $vendorDir . '/mike42/gfx-php/src/Mike42'),
     'Hoa\\Websocket\\' => array($vendorDir . '/hoa/websocket'),
     'Hoa\\Stream\\' => array($vendorDir . '/hoa/stream'),
