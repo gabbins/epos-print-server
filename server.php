@@ -24,7 +24,7 @@ try {
 
     if ($rdata->type == 'check-status') {
 
-      $bucket->getSource()->send('Server is running at <br><span>ws://localhost:4661</span>');
+      $bucket->getSource()->send('Server is running at <br><span>ws://127.0.0.1:6441</span>');
       return;
 
     } elseif ($rdata->type == 'open-cashdrawer') {
@@ -98,7 +98,7 @@ try {
         try {
           $escpos = new Escpos();
           $escpos->load($receipt_printer);
-          $escpos->print_data($rdata->data);
+          $escpos->print_invoice($rdata->data);
           echo '> Printed', "\n";
         } catch (Exception $e) {
           echo '> Error occurred, unable to print. ', $e->getMessage(), "\n";
@@ -134,7 +134,7 @@ try {
               try {
                 $escpos = new Escpos();
                 $escpos->load($printer);
-                $escpos->printData($rdata->data);
+                $escpos->print_invoice($rdata->data);
                 echo '> Printed', "\n";
               } catch (Exception $e) {
                 echo '> Error occurred, unable to print. ', $e->getMessage(), "\n";

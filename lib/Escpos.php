@@ -398,10 +398,10 @@ class Escpos
    */
   function columnify($leftCol, $rightCol, $leftWidthPercent, $rightWidthPercent, $space = 2, $remove_for_space = 0)
   {
-    $char_per_line = $this->char_per_line - $remove_for_space;
+    $char_per_line = $this->char_per_line - (int) $remove_for_space;
 
-    $leftWidth = $char_per_line * $leftWidthPercent / 100;
-    $rightWidth = $char_per_line * $rightWidthPercent / 100;
+    $leftWidth = $char_per_line * (int) $leftWidthPercent / 100;
+    $rightWidth = $char_per_line * (int) $rightWidthPercent / 100;
 
     $leftWrapped = wordwrap($leftCol, $leftWidth, "\n", true);
     $rightWrapped = wordwrap($rightCol, $rightWidth, "\n", true);
@@ -412,7 +412,7 @@ class Escpos
     for ($i = 0; $i < max(count($leftLines), count($rightLines)); $i++) {
       $leftPart = str_pad(isset($leftLines[$i]) ? $leftLines[$i] : "", $leftWidth, " ");
       $rightPart = str_pad(isset($rightLines[$i]) ? $rightLines[$i] : "", $rightWidth, " ");
-      $allLines[] = $leftPart . str_repeat(" ", $space) . $rightPart;
+      $allLines[] = $leftPart . str_repeat(" ", (int) $space) . $rightPart;
     }
     return implode("\n", $allLines) . "\n";
     // return implode($allLines, "\n") . "\n";
